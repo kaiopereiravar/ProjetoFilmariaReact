@@ -1,4 +1,4 @@
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -7,7 +7,7 @@
     background-color: black;
 }
 
-.logo{
+.logo {
     text-decoration: none;
     font-size: 30px;
     cursor: pointer;
@@ -15,7 +15,26 @@
     color: white;
 }
 
-.favoritos{
+.logo:hover{
+    animation: pulse 2s infinite;
+    color: red;
+    border: 1px white;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+.favoritos {
     cursor: pointer;
     background-color: white;
     padding: 5px 14px;
@@ -27,6 +46,7 @@
 
 .favoritos:hover,
 .favoritos:focus {
-  background: red;
-  color: #fff;
+    background: red;
+    color: #fff;
+    animation: pulse 2s infinite;
 }

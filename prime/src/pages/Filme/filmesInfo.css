@@ -44,6 +44,7 @@
 .area-buttons button:hover{
     color: #fff;
     background-color: brown;
+    animation: pulse 2s infinite;
 }
 
 .area-buttons a{
@@ -54,5 +55,17 @@
 
 .area-buttons a:hover{
     color: #fff;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
 }
 
