@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import api from '../../Services/Api'
 import '../Filme/filmesInfo.css'
 
 function Filmes() {
     const { id } = useParams()
+    const navigate = useNavigate(true)
+
     const [filme, setFilme] = useState({})
     const [loading, setLoading] = useState(true)
 
@@ -22,7 +24,8 @@ function Filmes() {
                 setLoading(false)
             })
             .catch(() => {
-                console.log('filme não encontrado')
+                navigate("/", {replace: true})//para caso nao achar o filme, ele redirecionar o use para uma tela
+                return
             })
         }
 
@@ -31,7 +34,7 @@ function Filmes() {
         return () => {//Após a saida da pagina, ele executa essa funcao anonima
             console.log('componente foi desmontado')
         }
-    }, [])
+    }, [navigate, id])
 
     if (loading) {//se loading for falso, ele executa a funçao loading
         return (
@@ -53,7 +56,7 @@ function Filmes() {
             <div className='area-buttons'>
                 <button>Salvar</button>
                 <button>
-                    <a href='#'>Trailer</a>
+                    <a target='_blank' real="external" href={`https://youtube.com/results?search_query=${filme.title} Trailer`}>Trailer</a>
                 </button>
             </div>
         </div>
