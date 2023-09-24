@@ -21,4 +21,12 @@
     padding: 5px 14px;
     color: black;
     border-radius: 4px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.favoritos:hover,
+.favoritos:focus {
+  background: red;
+  color: #fff;
 }
