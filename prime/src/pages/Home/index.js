@@ -30,6 +30,7 @@ function Home() {
         return(
             <div className="loading">
                 <h2>Carregando filmes...</h2>
+                <div className="spinner"></div>
             </div>
         )
     }

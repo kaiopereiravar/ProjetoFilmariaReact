@@ -58,6 +58,7 @@ function Filmes() {
         return (
             <div className='filme-info'>
                 <h1>Carregando detalhes...</h1>{/*O objetive é que antes de executar os banners, caso a net do usuario esteja lenta, ele executa essa funçao*/}
+                <div className='spinner'></div>
             </div>
         )
     }
