@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import api from '../../Services/Api'
 import '../Filme/filmesInfo.css'
+import {toast} from 'react-toastify'
 
 function Filmes() {
     const { id } = useParams()
@@ -44,13 +45,13 @@ function Filmes() {
         const hasFilme = filmesSalvos.some((filmesSalvos) => filmesSalvos.id === filme.id)//retorna um booleano
 
         if(hasFilme){
-            alert('Esse filme ja esta na sua lista!!')
+            toast.warn('Esse filme ja esta na sua lista!!!')
             return
         }
 
         filmesSalvos.push(filme)
         localStorage.setItem("@primeFlix", JSON.stringify(filmesSalvos))
-        alert("filme salvo com sucesso!!!")
+        toast.success('filme salvo com sucesso!!!')
     }
 
     if (loading) {//se loading for falso, ele executa a funçao loading
